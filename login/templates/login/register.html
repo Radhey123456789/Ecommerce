@@ -1,0 +1,28 @@
+{% extends 'extends/base.html' %}
+{% block title %}Register{% endblock %}
+{% block register_active %}active{% endblock %}
+
+{% block content %}
+
+<div class="">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+					<form action = "" method='post' enctype='multipart/form-data'>
+						{% csrf_token %}
+						{{ form.as_p }}
+					<button type = "submit" value = "Submit"/>Submit</button>
+					</form>
+				</div>  
+            </div>
+			
+			
+        </div>
+    </div>
+	
+	
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'extends/base.html' %}
+{% block content %}
+ <div class="row">
+
+        <div class="col-lg-3">
+
+          <h3 class="my-4">All List Of Products</h3>
+          <div class="list-group">
+		  <ul class="list" style="list-style-type:none" >
+            <li><a href="{% url 'index' %}" class="list-group-item">All</a></li>
+            {% for i in categories %}
+					<li><a {% if category.slug == i.slug %}class="active"{% endif %} href="{% url 'category' i.slug %}">{{i.name}}</a></li>
+			{% endfor %}
+		  </ul>
+          </div>
+
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+			
+			
+          {% include 'include/slider.html' %}
+		  
+          <div class="row">
+		  
+		    
+            <div class="col-lg-4 col-md-6 mb-4">
+			
+			{% for k in category.product_set.all %}
+			  <br/>
+              <div class="card">
+                <a href="#"><img class="card-img-top" src="{{k.pic.url}}" alt="" width="400px" height="150px"/></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">{{k.name}}</a>
+                  </h4>
+                  <h5>Rs. {{k.price}}</h5>
+                  <p class="card-text">{{k.description}}</p>				  
+				  <a style="" href="{% url 'detail' k.id %}" class="btn btn-primary btn-md">Add To Cart</a>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                </div>
+              </div>
+			  {% endfor %}
+			  
+            </div>
+			
+			
+			
+			
+		  
+		  
+			</div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+      <!-- /.row -->
+{% endblock %}

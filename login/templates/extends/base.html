@@ -1,0 +1,75 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop Item - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href='{% static "vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='{% static "css/shop-item.css" %}' rel="stylesheet">
+	
+    <link rel="stylesheet" type="text/css" href='{% static "bootstrap/css/bootstrap.min.css" %}' />
+    <link rel="stylesheet" type="text/css" href='{% static "font-awesome/css/font-awesome.min.css" %}' />
+
+    <script type="text/javascript" src='{% static "js/jquery-1.10.2.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "bootstrap/js/bootstrap.min.js" %}'></script>
+     
+	 <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
+
+		<!--======= Awesome Font StyleSheet =========-->
+		<link href='{% static "style/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" media="all" %}'>
+
+		<!--======= Helping Plug-in StyleSheets =========-->
+		<link href='{% static "style/css/bootstrap.min.css" %}' rel="stylesheet" media="all">
+
+		<!--======= Responsive Bootstrap Carousel StyleSheet =========-->
+		<link href='{% static "style/css/responsive_bootstrap_carousel_mega_min.css" %}' rel="stylesheet" media="all">
+		<link href='{% static "style/css/theme.css" %}' rel="stylesheet" media="all">
+
+  </head>
+
+  <body style="margin-right:0px;">
+
+    <!-- Navigation -->
+    {% include 'include/nav.html' %}
+    <!-- Page Content -->
+    <div class="container">
+	{% block content %}	
+	
+    {% endblock %}
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+     {% include 'include/footer.html' %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src='{% static "vendor/jquery/jquery.min.js" %}'></script>
+    <script src='{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+	
+	
+	<!--======= jQuery =========-->
+	<script src='{% static "style/js/jquery-1.12.4.min.js" %}'></script>
+
+	<!--======= Bootstrap =========-->
+	<script src='{% static "style/js/bootstrap.min.js" %}'></script>
+
+	<!--======= Touch Swipe =========-->
+	<script src='{% static "style/js/jquery.touchSwipe.min.js" %}'></script>
+
+	<!--======= Customize =========-->
+	<script src='{% static "style/js/responsive_bootstrap_carousel.js" %}'></script>
+
+	
+  </body>
+
+</html>

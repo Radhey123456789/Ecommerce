@@ -1,0 +1,136 @@
+<button type="button" class="button btn btn-success btn-md" data-toggle="modal" data-target="#myModal"><span>Procced </span></button>
+			
+			 <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <div class="row">
+  <div class="col-75">
+    <div class="">
+	 <form action="{% url 'login:user_login' %}" method="post" class="login-form">{% csrf_token %}
+  <div class="imgcontainer">
+    <img src='{% static "img/img_avatar2.png" %}'alt="Avatar" class="avatar" height="700px" width="700px"/>
+  </div>
+
+  <div class="">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+	<br/>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+	<br/>
+    <button type="submit">Login</button>
+	<br/>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+<br/>
+  <div class="" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form> 
+	
+	
+	
+	
+	
+      <!--<form action="">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label><br/>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe"><br/>
+            <label for="email"><i class="fa fa-envelope"></i> Email</label><br/>
+            <input type="text" id="email" name="email" placeholder="john@example.com"><br/>
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label><br/>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street"><br/>
+            <label for="city"><i class="fa fa-institution"></i> City</label><br/>
+            <input type="text" id="city" name="city" placeholder="New York">
+			<br/>
+            <div class="row">
+              <div class="col-40">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY">
+              </div>
+              <div class="col-40">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+            </div>
+          </div>
+        </div>
+		<div class="row">
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container" style="font-size: 50px;">
+              <i class="fa fa-cc-visa " style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label><br/>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe"><br/>
+            <label for="ccnum">Credit card number</label><br/>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"><br/>
+            <label for="expmonth">Exp Month</label><br/>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September"><br/>
+            <div class="row">
+              <div class="col-40">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-40">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+		<div class="row">
+        <div class="col-40">
+		<input type="submit" value="Continue to checkout" class="btn">
+        </div>
+		</div>
+	  </form>-->
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+	  <table class="table" style="width:50%">
+      {% for i in cart_detail %}
+      <tr>
+        
+        <td>{{i.product.name}}</td>
+        
+		<td>{{i|cart_price}}</td>
+		
+      </tr>
+      {% endfor %}
+	  
+	  </table>
+      
+      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+    </div>
+  </div>
+</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
